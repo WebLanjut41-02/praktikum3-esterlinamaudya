@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Daftar Menu
+	</title>
+</head>
+<body>
+	<form>
+		<table>
+			<thead>
+				<th>Nama Makanan</th>
+				<th>Harga Makanan</th>
+				<th>Jumlah Makanan</th>
+			</thead>
+			<tbody>
+				<form action="POST" action="<?php echo base_url()?>menu/transaksi">
+					<?php $listmenu = $this->session->makanan;
+					foreach ($listmenu as $data) {
+					?>
+					<tr>
+						<td><input type="text" name="namamakanan" value="<?php echo $data->hargamakanan?>" disabled></td>
+						<td><input type="text" name="jumlahmakanan" value=""></td>
+					</tr>
+
+					<?php
+					} ?>
+
+					<tbody>
+						<br><br>
+						<input type="submit" name="submit" value="pesan">
+					</tbody>
+					
+				</form>
+			</tbody>
+		</table>
+	</form>
+
+</body>
+</html>
